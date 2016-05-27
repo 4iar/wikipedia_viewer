@@ -1,7 +1,7 @@
 "use strict"
 
 angular.module('wikipediaViewer', ['ngSanitize'])
-    .controller("search", function($scope, $http, $sce) {
+    .controller("search", function($scope, $http, $sce, $window) {
 
         $scope.parseAndAddResult = function (result) {
             $scope.results.push({
@@ -23,4 +23,10 @@ angular.module('wikipediaViewer', ['ngSanitize'])
                     });
                 });
         };
+
+        $scope.redirectToRandomArticle = function () {
+            var randomArticleUrl = "https://wikipedia.org/wiki/Special:Randompage";
+            $window.open(randomArticleUrl, "_blank")
+        };
+
     });

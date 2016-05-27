@@ -33,6 +33,9 @@
     <div ng-controller="search">
 
         <div class="input-group" id="search-box">
+            <span class="input-group-btn">
+            <button ng-click="redirectToRandomArticle()" class="btn btn-default" type="button"><span class="fa fa-random"></span></button>
+               </span>
             <input ng-model="searchString" type="text" class="form-control " placeholder="">
             <span class="input-group-btn">
                 <button ng-click="searchArticles(searchString)" class="btn btn-default" type="button"><span class="glyphicon glyphicon-plus"></span></button>
