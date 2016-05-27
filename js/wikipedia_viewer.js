@@ -2,6 +2,8 @@
 
 angular.module('wikipediaViewer', ['ngSanitize'])
     .controller("search", function($scope, $http, $sce, $window) {
+        
+        $scope.loading = false;
 
         $scope.parseAndAddResult = function (result) {
             $scope.results.push({
@@ -12,6 +14,8 @@ angular.module('wikipediaViewer', ['ngSanitize'])
         };
 
         $scope.searchArticles = function (searchString) {
+            $scope.loading = true;
+            
             var searchApiBaseUrl = "https://crossorigin.me/https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srsearch=";
             var searchApiUrl = encodeURI(searchApiBaseUrl + searchString);
 
@@ -21,6 +25,9 @@ angular.module('wikipediaViewer', ['ngSanitize'])
                     apiRequest.data.query.search.forEach(function (result) {
                         $scope.parseAndAddResult(result);
                     });
+                })
+                .finally(function () {
+                   $scope.loading = false;
                 });
         };
 
