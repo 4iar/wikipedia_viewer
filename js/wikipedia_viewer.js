@@ -5,14 +5,14 @@ angular.module('wikipediaViewer', [])
 
         $scope.parseAndAddResult = function (result) {
             $scope.results.push({
-                url: encodeUri("http://en.wikipedia.org/wiki/" + result.title),
+                url: encodeUri("https://en.wikipedia.org/wiki/" + result.title),
                 title: result.title,
                 snippet: result.snippet
             });
         };
 
         $scope.searchArticles = function (searchString) {
-            var searchApiBaseUrl = "http://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srsearch=";
+            var searchApiBaseUrl = "https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srsearch=";
             var searchApiUrl = encodeURI(searchApiBaseUrl + searchString);
 
             $scope.results = [];
