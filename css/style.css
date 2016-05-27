@@ -1,0 +1,16 @@
+.top-buffer {
+    margin-top:20px;
+}
+
+.row {
+    border: 0px solid;
+    background-color: #303030;
+}
+
+#search-box {
+    margin-top: 60px;
+}
+
+#bottom-padding {
+    margin-bottom: 60px;
+}

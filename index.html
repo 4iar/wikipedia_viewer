@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Font-Awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Import AngularJS-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://bootswatch.com/darkly/bootstrap.min.css">
+
+    <!--Import my dodgy css-->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+
+    <title>Wikipedia viewer</title>
+</head>
+
+<body>
+
+<script type="text/javascript" src="js/wikipedia_viewer.js"></script>
+
+<div class="container" ng-app="wikipediaViewer">
+
+    <div ng-controller="search">
+
+        <div class="input-group" id="search-box">
+            <input ng-model="searchString" type="text" class="form-control " placeholder="">
+            <span class="input-group-btn">
+                <button ng-click="addChannel(searchString)" class="btn btn-default" type="button"><span class="glyphicon glyphicon-plus"></span></button>
+            </span>
+        </div>
+
+        <div ng-repeat="result in results" id="channel">
+            {{ result }}
+        </div>
+
+        <div id="bottom-padding"></div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
