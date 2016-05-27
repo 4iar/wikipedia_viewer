@@ -36,7 +36,7 @@
             <span class="input-group-btn">
             <button ng-click="redirectToRandomArticle()" class="btn btn-default" type="button"><span class="fa fa-random"></span></button>
                </span>
-            <input ng-model="searchString" type="text" class="form-control " placeholder="">
+            <input ng-model="searchString" ng-keyup="$event.keyCode == 13 && searchArticles(searchString)" type="text" class="form-control " placeholder="">
             <span class="input-group-btn">
                 <button ng-click="searchArticles(searchString)" class="btn btn-default" type="button"><span ng-hide="loading" class="fa fa-search"></span><span ng-show="loading" class="fa fa-spin fa-spinner"></span></button>
             </span>
