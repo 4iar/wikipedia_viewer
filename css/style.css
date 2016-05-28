@@ -2,6 +2,10 @@
     margin-top:20px;
 }
 
+.article-snippet {
+    padding-bottom: 15px;
+}
+
 .row {
     border: 0px solid;
     background-color: #303030;
